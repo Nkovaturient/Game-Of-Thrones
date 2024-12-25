@@ -1,0 +1,43 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Roboto+Slab:wght@500&family=Rubik+Wet+Paint&family=Trade+Winds&family=Trocchi&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+    /* font-family: "Trocchi", serif;
+    font-family: "Dancing Script", cursive; */
+    /* font-family: "Rubik Wet Paint", system-ui; */
+    font-family: "Trade Winds", system-ui;
+  font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.hero-text{
+  font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.bot-text{
+  font-family: "Trocchi", serif;
+  font-weight: 300;
+  font-style: normal;
+
+}
