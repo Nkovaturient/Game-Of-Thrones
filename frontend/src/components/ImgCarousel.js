@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { EffectCards, Navigation } from 'swiper/modules';
+import Image from 'next/image';
 
 export default function ImgCarousel({ images }) {
   return (
@@ -19,15 +20,15 @@ export default function ImgCarousel({ images }) {
     >
       {images.map((src, index) => (
         <SwiperSlide key={index}>
-          <img
-            src={src}
-            alt={`Slide ${index}`}
-            // className="w-full h-full object-cover rounded-lg"
-            className="object-cover w-full h-full rounded-md"
-                srcSet={`${src}?w=480 480w, ${src}?w=768 768w, ${src}?w=1200 1200w`}
-  sizes="(max-width: 768px) 480px, (max-width: 1200px) 768px, 1200px"
-  loading='lazy'
-          />
+          <div className="relative w-full h-full">
+            <Image
+              src={src}
+              alt={`Slide ${index}`}
+              fill
+              className="object-cover rounded-md"
+              priority={index === 0}
+            />
+          </div>
         </SwiperSlide>
       ))}
     </Swiper>

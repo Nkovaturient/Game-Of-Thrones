@@ -1,5 +1,4 @@
 "use client";
-import { useContext, useState } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -17,7 +16,7 @@ export default function Navbar() {
           href={'/'}
             className="bg-emerald-500 rounded-full text-white font-semibold py-2 px-4  shadow-lg hover:bg-yellow-400 transition duration-300 ease-in-out items-center  justify-between"
           >
-            King's Landing
+            King&apos;s Landing
           </Link>
           <Link
             href="/warriors"

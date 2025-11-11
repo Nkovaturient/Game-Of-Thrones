@@ -346,7 +346,7 @@ export default function LookalikeCam() {
                 <div className="flex h-full flex-col items-center justify-center text-center">
                   <h2 className="text-xl font-semibold text-yellow-300">Awaiting your visage</h2>
                   <p className="mt-2 max-w-sm text-sm text-slate-300">
-                    Align yourself within the frame and tap "Reveal My GOT Character" to let our seers compare you to the legends of Westeros.
+                    {"Align yourself within the frame and tap \"Reveal My GOT Character\" to let our seers compare you to the legends of Westeros."}
                   </p>
                 </div>
               )}

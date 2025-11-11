@@ -43,36 +43,30 @@ export default function Carousel() {
       >
         {images.map((src, index) => (
           <SwiperSlide key={index}>
-            <div className="flex justify-center items-center w-full h-full">
-              <img
+            <div className="relative flex justify-center items-center w-full h-full">
+              <Image
                 src={src}
                 alt={`Slide ${index + 1}`}
-                className="object-cover w-96 rounded-md"
-                srcSet={`${src}?w=480 480w, ${src}?w=768 768w, ${src}?w=1200 1200w`}
-  sizes="(max-width: 768px) 480px, (max-width: 1200px) 768px, 1200px"
-  loading='lazy'
+                width={384}
+                height={512}
+                className="object-cover w-96 h-auto max-h-[90%] rounded-md"
+                priority={index === 0}
               />
-              {/* <Image
-  src={src}
-  alt={`Slide ${index + 1}`}
-  layout="fill"
-  objectFit="cover"
-  priority
-  className="rounded-xl w-96"
-/> */}
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      <div className="max-w-4xl px-4 py-8 text-center">
+      <div className="max-w-4xl px-4 py-8 text-center space-y-4">
         <h2 className="text-3xl font-bold mb-4 hero-text">Daenerys Targaryen: The Mother of Dragons</h2>
         <p className="text-lg text-gray-300">
           Emilia Clarke is renowned for her role as Daenerys Targaryen in Game of Thrones. Her portrayal of the Mother of Dragons has left an indelible mark on television history, captivating audiences with her commanding presence and emotional depth.
-          
-Oh, Daenerys Targaryen. With her platinum hair, unyielding determination, and a killer catchphrase (Dracarys!), Emilia Clarke soared to iconic status as the Dragon Queen. Her arc—from an exiled princess to a revolutionary conqueror—is a masterclass in character evolution. Every dragon ride and empowering monologue cements her as a fire-breathing symbol of justice, vengeance, and occasionally, fiery destruction.
-
-Fun fact: Emilia delivered all her High Valyrian (fake language alert!) lines with such conviction, you'd think she grew up in dragon school.
+        </p>
+        <p className="text-lg text-gray-300">
+          {"Oh, Daenerys Targaryen. With her platinum hair, unyielding determination, and a killer catchphrase (Dracarys!), Emilia Clarke soared to iconic status as the Dragon Queen. Her arc—from an exiled princess to a revolutionary conqueror—is a masterclass in character evolution. Every dragon ride and empowering monologue cements her as a fire-breathing symbol of justice, vengeance, and occasionally, fiery destruction."}
+        </p>
+        <p className="text-lg text-gray-300">
+          {"Fun fact: Emilia delivered all her High Valyrian (fake language alert!) lines with such conviction, you’d think she grew up in dragon school."}
         </p>
       </div>
     </div>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import Image from 'next/image';
 
 
 const WARRIORS = [
@@ -64,14 +65,19 @@ export default function WarriorsPage() {
             onHoverEnd={() => setHoveredWarrior(null)}
             className="relative w-full h-64 bg-gray-800 rounded-lg overflow-hidden shadow-lg cursor-pointer"
           >
-            <motion.img
-              src={hoveredWarrior === index ? warrior.character : warrior.actor}
-              alt={warrior.name}
-              className="w-full h-full object-cover"
+            <motion.div
+              className="absolute inset-0"
               initial={{ scale: 1 }}
               animate={{ scale: hoveredWarrior === index ? 1.1 : 1 }}
               transition={{ duration: 0.3 }}
-            />
+            >
+              <Image
+                src={hoveredWarrior === index ? warrior.character : warrior.actor}
+                alt={warrior.name}
+                fill
+                className="object-cover"
+              />
+            </motion.div>
             <motion.div
               className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-end opacity-0"
               animate={{ opacity: hoveredWarrior === index ? 1 : 0 }}
@@ -109,7 +115,7 @@ export default function WarriorsPage() {
               <li>Executed the ultimate revenge by killing Walder Frey and his sons.</li>
               <li>Trained with the Faceless Men to become a deadly assassin.</li>
               <li>Killed the Night King in the **Battle of Winterfell**.</li>
-              <li>Delivered justice to the House of Frey with her iconic line: *"The North remembers."*</li>
+              <li>{'Delivered justice to the House of Frey with her iconic line: *"The North remembers."*'}</li>
             </ul>
           </div>
 
@@ -120,7 +126,7 @@ export default function WarriorsPage() {
               <li>Mother of Dragons: Commanded Drogon, Rhaegal, and Viserion.</li>
               <li>Freed the Unsullied in Astapor and eliminated the slave masters.</li>
               <li>Brought her dragons to Westeros to challenge the Lannisters.</li>
-              <li>Destroyed King's Landing in her quest for the Iron Throne.</li>
+              <li>{"Destroyed King’s Landing in her quest for the Iron Throne."}</li>
             </ul>
           </div>
 
@@ -128,10 +134,10 @@ export default function WarriorsPage() {
           <div className="bg-gray-800 p-6 rounded-lg shadow-md">
             <h3 className="text-2xl font-bold text-yellow-400">Tyrion Lannister</h3>
             <ul className="mt-4 text-gray-300 space-y-2">
-              <li>Saved King’s Landing during the Battle of Blackwater Bay.</li>
-              <li>Spoke the truth and won hearts during his trial for Joffrey's murder.</li>
+              <li>{'Saved King’s Landing during the Battle of Blackwater Bay.'}</li>
+              <li>{"Spoke the truth and won hearts during his trial for Joffrey's murder."}</li>
               <li>Served as Hand of the Queen to Daenerys Targaryen.</li>
-              <li>Survived against all odds despite his family's betrayals.</li>
+              <li>{"Survived against all odds despite his family's betrayals."}</li>
             </ul>
           </div>
         </div>

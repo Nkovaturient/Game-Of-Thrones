@@ -2,6 +2,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function SlidingSection({
   id,
@@ -28,7 +29,7 @@ export default function SlidingSection({
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-         <img src={imgSrc} alt={title} className="rounded-xl shadow-lg max-w-full" />
+         <Image src={imgSrc} alt={title} width={600} height={400} className="rounded-xl shadow-lg max-w-full h-auto" />
       </motion.div> }
 
       {/* Text Section */}
@@ -54,7 +55,7 @@ export default function SlidingSection({
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
-         <img src={imgSrc} alt={title} className="rounded-xl shadow-lg max-w-full" />
+         <Image src={imgSrc} alt={title} width={600} height={400} className="rounded-xl shadow-lg max-w-full h-auto" />
       </motion.div> }
 
     </section>
