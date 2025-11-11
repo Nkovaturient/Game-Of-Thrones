@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const { HfInference } = require("@huggingface/inference");
+const {InferenceClient} = require("@huggingface/inference");
 const HF_API_KEY = process.env.HUGGING_FACE_API_KEY;
 
-const client = new HfInference(HF_API_KEY);
+const client = new InferenceClient(HF_API_KEY);
 
 router.post("/", async (req, res) => {
 
@@ -18,7 +18,7 @@ router.post("/", async (req, res) => {
     let out = "";
 
     const stream = client.chatCompletionStream({
-      model: "Qwen/Qwen2.5-72B-Instruct",
+      model: "Qwen/Qwen2.5-72B-Instruct",  // "Qwen/Qwen3-32B",
       messages: [{ role: "user", content: userMsg }],
       temperature: 0.5,
       max_tokens: 2048,

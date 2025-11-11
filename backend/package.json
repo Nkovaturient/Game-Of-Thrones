@@ -4,20 +4,21 @@
   "description": "Server of Game of Thrones :))",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "build:embeddings": "node loadModel.js"
   },
   "keywords": [],
   "author": "Neha Kumari",
   "license": "ISC",
   "dependencies": {
-    "@huggingface/inference": "^2.8.1",
+    "@huggingface/inference": "^4.13.2",
     "@tensorflow/tfjs-node": "^4.22.0",
+    "@vladmandic/face-api": "^1.7.15",
     "body-parser": "^1.20.3",
     "canvas": "^2.11.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "face-api.js": "^0.20.0",
     "nodemon": "^3.1.7"
   }
 }
