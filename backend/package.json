@@ -12,10 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "@huggingface/inference": "^4.13.2",
+    "@napi-rs/canvas": "^0.1.82",
     "@tensorflow/tfjs-node": "^4.22.0",
     "@vladmandic/face-api": "^1.7.15",
     "body-parser": "^1.20.3",
-    "canvas": "^2.11.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",

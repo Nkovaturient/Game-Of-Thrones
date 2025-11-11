@@ -1,8 +1,7 @@
 const faceapi = require('@vladmandic/face-api');
 const fs = require('fs');
 const path = require('path');
-const canvas = require('canvas');
-const { Canvas, Image, ImageData } = canvas;
+const { Canvas, Image, ImageData } = require('@napi-rs/canvas');
 const tf = require('@tensorflow/tfjs-node');
 
 faceapi.env.monkeyPatch({ Canvas, Image, ImageData });
