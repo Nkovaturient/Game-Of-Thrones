@@ -1,9 +1,13 @@
-# Game-Of-Thrones: A Tribute to Emilia Clarke
-### "In the halls of code and fire, the Mother of Dragons still reigns."
+# ✳️⭄ Game-Of-Thrones: A Tribute to Emilia Clarke ⭄✳️
+> ### ❤️‍🔥In the halls of code and fire, the Mother of Dragon still reigns.❤️‍🔥
 
 Picture a Westerosi playbill written for techies: Fire up the site and you’re greeted by sweeping visuals, lore-rich sections, and a maester-on-demand chatbot. Step into the Lookalike Cam and a TensorFlow-powered sentry studies your visage, compares it against a handcrafted roster of characters, then unveils the champion you most resemble—complete with animated fanfare. It’s cosplay energy without the costume change.
 
 >  This project is a fan-crafted ode to Emilia Clarke—our eternal Daenerys—blending cinematic reverence with playful machine learning. Wander through immersive pages, trade stories with a lore-wise chatbot, and let the Lookalike Cam summon your closest counterpart from the great houses of Westeros.
+
+### Live: 🚀
+- 🟢 Frontend: https://game-of-thrones-xi-indol.vercel.app/
+- 🟢 Backend: https://got-backend-drb5.onrender.com
 
 ## Features of the Realm
 - **Lookalike Cam:** A TensorFlow sentinel studies each visitor and reveals their most kindred Game of Thrones character, complete with portraits and match lore.
@@ -38,9 +42,16 @@ Step onto the site and you’re greeted like a returning bannerman—hero shots 
 
 - Run backend server
   ```
+  cd backend
+  npm install
   npm start
   ```
   -  server listening on `http://localhost:5200/home`
 
-- Then, access the deployed frontend here:-
-  [Game-of-Thrones](https://game-of-thrones-xi-indol.vercel.app/)
+- Then, run the frontend:
+  ```
+  cd frontend
+  npm install
+  npm run dev
+  ```
+  -  vite server listening on `http://localhost:3000`
