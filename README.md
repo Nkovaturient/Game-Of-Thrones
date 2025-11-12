@@ -32,3 +32,15 @@ Step onto the site and you’re greeted like a returning bannerman—hero shots 
 ![Screenshot (417)](https://github.com/user-attachments/assets/f2e9f1de-2e03-4c12-a8b3-a27a9c871013)
 
 ![Screenshot (416)](https://github.com/user-attachments/assets/c86dc7eb-d19d-4526-9a98-6d46701d36e0)
+
+
+## Setup
+
+- Run backend server
+  ```
+  npm start
+  ```
+  -  server listening on `http://localhost:5200/home`
+
+- Then, access the deployed frontend here:-
+  [Game-of-Thrones](https://game-of-thrones-xi-indol.vercel.app/)
