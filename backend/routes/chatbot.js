@@ -27,8 +27,10 @@ router.post("/", async (req, res) => {
 
     for await (const chunk of stream) {
       if (chunk.choices && chunk.choices.length > 0) {
-        out += chunk.choices[0].delta.content;
-       
+        const deltaContent = chunk.choices[0].delta?.content;
+        if (typeof deltaContent === 'string') {
+          out += deltaContent;
+        }
       }
     }
 
