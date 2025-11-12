@@ -6,9 +6,33 @@ const chatRouter = require('./routes/chatbot');
 const faceRecognitionService = require('./services/faceRecognitionService');
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5200;
 
-app.use(cors());
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://game-of-thrones-xi-indol.vercel.app',
+  process.env.FRONTEND_ORIGIN,
+].filter(Boolean);
+
+const corsOptions = {
+  origin(origin, callback) {
+    if (!origin) {
+      return callback(null, true);
+    }
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+
+    return callback(new Error(`Origin ${origin} not allowed by CORS`));
+  },
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 app.use(bodyParser.json({ limit: '10mb' }));
 
 app.use('/api/chat', chatRouter);

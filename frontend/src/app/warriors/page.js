@@ -8,8 +8,8 @@ import Image from 'next/image';
 const WARRIORS = [
   {
     name: 'Daenerys Targaryen',
-    actor: '/dt.jpg',
-    character: '/e2.jpg',
+    actor: '/ec2.webp',
+    character: '/e3.jpg',
   },
   {
     name: 'Jon Snow',
@@ -44,6 +44,23 @@ const WARRIORS = [
   },
 ];
 
+const WARRIOR_VIDEOS = [
+  {
+    title: 'The Watch Returns - Jon Snow',
+    description:
+      'Relive the grit and valor of Jon Snow as he faces the armies of the North.',
+    src: '/jon_snow.mp4',
+    poster: '/w10.webp',
+  },
+  {
+    title: 'Fire and Blood - Daenerys Targaryen',
+    description:
+      'Dragons, destiny, and the Mother of Dragons herself. Breaking chains and claiming the Iron Throne.',
+    src: '/dtmod.mp4',
+    poster: '/d2.jpg',
+  },
+];
+
 export default function WarriorsPage() {
   const [hoveredWarrior, setHoveredWarrior] = useState(null);
 
@@ -75,6 +92,7 @@ export default function WarriorsPage() {
                 src={hoveredWarrior === index ? warrior.character : warrior.actor}
                 alt={warrior.name}
                 fill
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 25vw"
                 className="object-cover"
               />
             </motion.div>
@@ -87,6 +105,44 @@ export default function WarriorsPage() {
             </motion.div>
           </motion.div>
         ))}
+      </section>
+
+      {/* Hero Video Showcase */}
+      <section className="px-6 md:px-10 lg:px-16 py-16 bg-black/70">
+        <div className="max-w-5xl mx-auto space-y-12">
+          {WARRIOR_VIDEOS.map((video) => (
+            <motion.article
+              key={video.src}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true, amount: 0.4 }}
+              className="rounded-3xl border border-white/10 bg-gray-900/70 backdrop-blur-sm p-8 shadow-2xl"
+            >
+              <header className="space-y-2">
+                <h2 className="text-2xl md:text-3xl font-semibold text-yellow-400">{video.title}</h2>
+                <p className="text-sm md:text-base text-gray-300 leading-relaxed">{video.description}</p>
+              </header>
+
+              <div className="mt-6">
+                <div className="relative w-full overflow-hidden rounded-2xl shadow-lg">
+                  <div className="relative w-full pt-[56.25%]">
+                    <video
+                      className="absolute inset-0 h-full w-full object-cover"
+                      controls
+                      playsInline
+                      preload="metadata"
+                      poster={video.poster}
+                    >
+                      <source src={video.src} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </motion.article>
+          ))}
+        </div>
       </section>
 
       {/* Description Section */}

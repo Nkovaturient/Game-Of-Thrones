@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 import { EffectCards, Navigation } from 'swiper/modules';
 import Image from 'next/image';
 
-export default function ImgCarousel({ images }) {
+export default function ImgCarousel({ images, imageOptions = {} }) {
   return (
     <Swiper
       modules={[Navigation, EffectCards]}
@@ -16,7 +16,7 @@ export default function ImgCarousel({ images }) {
       spaceBetween={30}
       slidesPerView={1}
       autoplay={{ delay: 2000 }}
-      className="w-full h-[300px] md:h-[500px] object-fit"
+      className="w-full h-[350px] md:h-[500px] object-fit"
     >
       {images.map((src, index) => (
         <SwiperSlide key={index}>
@@ -25,8 +25,10 @@ export default function ImgCarousel({ images }) {
               src={src}
               alt={`Slide ${index}`}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 75vw, 600px"
               className="object-cover rounded-md"
-              priority={index === 0}
+              priority={imageOptions.priority ?? index === 0}
+              {...imageOptions}
             />
           </div>
         </SwiperSlide>
